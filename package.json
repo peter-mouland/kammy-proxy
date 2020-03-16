@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "NODE_ENV=production babel src -d compiled",
+    "postinstall": "yarn build",
     "start": "nodemon src/server-entry.js --config nodemon.json",
     "start:prod": "NODE_ENV=production node compiled/server-entry.js"
   },
