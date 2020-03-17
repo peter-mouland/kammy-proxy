@@ -13,6 +13,7 @@ import headers from './koa-middleware-headers';
 
 import skySportsRouter from './routes/routes.skysports';
 import { DIST } from './config/paths';
+import { postJSON } from "./fetchr";
 
 const YEAR = 100 * 60 * 60 * 24 * 7 * 52;
 const server = new Koa();
@@ -34,6 +35,16 @@ server.use(convert(session({
 
 server.use(compress());
 server.use(headers());
+
+router.get('/admin/publish', (ctx, next) =>
+    postJSON('https://webhook.gatsbyjs.com/hooks/data_source/publish/b5688433-a49a-4368-84e6-8a08eb2e4377')
+        .then((data) => {
+            ctx.type = 'json';
+            ctx.status = 200;
+            ctx.response.body = data;
+            next();
+        })
+    );
 
 router
     .use(skySportsRoutes.routes())
