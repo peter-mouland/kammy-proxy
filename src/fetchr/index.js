@@ -65,7 +65,3 @@ export const getJSON = (url, options) => fetchUrl(url, jsonOpts('GET', null, opt
 export const postJSON = (url, data, options) => fetchUrl(url, jsonOpts('POST', data, options));
 
 export const fetchGraphQL = (data, variables, opts) => fetchUrl('/graphql', graphQLOpts(data, variables, opts)).then((response) => parseJson(data, response));
-
-export const fetchSpreadsheet = (doc, worksheet, opts) => getJSON(`/google-spreadsheet/${doc}/${worksheet}`, opts);
-
-export const fetchSkySports = (url, options) => getJSON(`/skysports/${url}`, options);

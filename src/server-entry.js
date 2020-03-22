@@ -12,6 +12,7 @@ import koaStatic from 'koa-static';
 import headers from './koa-middleware-headers';
 
 import skySportsRouter from './routes/routes.skysports';
+import spreadsheetsRouter from './routes/routes.spreadsheets';
 import { DIST } from './config/paths';
 import { postJSON } from "./fetchr";
 
@@ -20,6 +21,7 @@ const server = new Koa();
 const router = new Router();
 const staticRoute = koaStatic(DIST, { immutable: true, maxage: YEAR });
 const skySportsRoutes = skySportsRouter();
+const spreadsheetsRoutes = spreadsheetsRouter();
 
 qs(server);
 
@@ -49,6 +51,8 @@ router.get('/admin/publish', (ctx, next) =>
 router
     .use(skySportsRoutes.routes())
     .use(skySportsRoutes.allowedMethods())
+    .use(spreadsheetsRoutes.routes())
+    .use(spreadsheetsRoutes.allowedMethods())
     .use(staticRoute);
 server.use(router.routes());
 server.listen(process.env.DEV_PORT || process.env.PORT, () => {

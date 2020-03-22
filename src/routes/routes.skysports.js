@@ -1,4 +1,5 @@
 import Router from 'koa-router';
+
 import handleError from '../koa-middleware-handler-error';
 import { getJSON } from '../fetchr';
 
