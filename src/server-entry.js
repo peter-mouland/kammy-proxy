@@ -8,6 +8,7 @@ import convert from 'koa-convert';
 import qs from 'koa-qs';
 import Router from 'koa-router';
 import koaStatic from 'koa-static';
+import cors from '@koa/cors';
 
 import headers from './koa-middleware-headers';
 
@@ -35,6 +36,7 @@ server.use(convert(session({
   signed: true, /** (boolean) signed or not (default true) */
 }, server)));
 
+server.use(cors());
 server.use(compress());
 server.use(headers());
 

@@ -28,6 +28,7 @@
     "@babel/plugin-transform-spread": "7.8.3",
     "@babel/preset-env": "7.8.7",
     "@babel/runtime": "7.8.7",
+    "@koa/cors": "2",
     "babel-loader": "8.0.6",
     "babel-plugin-add-module-exports": "1.0.2",
     "babel-plugin-dynamic-import-node": "2.3.0",
