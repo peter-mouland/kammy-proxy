@@ -8,6 +8,7 @@ import convert from 'koa-convert';
 import qs from 'koa-qs';
 import Router from 'koa-router';
 import koaStatic from 'koa-static';
+import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 
 import headers from './koa-middleware-headers';
@@ -39,6 +40,7 @@ server.use(convert(session({
 server.use(cors());
 server.use(compress());
 server.use(headers());
+server.use(bodyParser());
 
 router.get('/admin/publish', (ctx, next) =>
     postJSON('https://webhook.gatsbyjs.com/hooks/data_source/publish/b5688433-a49a-4368-84e6-8a08eb2e4377')
