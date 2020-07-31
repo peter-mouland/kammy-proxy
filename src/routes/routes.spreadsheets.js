@@ -6,6 +6,7 @@ import {
     fetchPremierLeagueTransfers,
     fetchChampionshipTransfers,
     fetchLeagueOneTransfers,
+    fetchLeagueTwoTransfers,
     fetchCup,
     fetchDraft,
     fetchDivisions,
@@ -13,6 +14,11 @@ import {
     fetchGameWeeks,
     fetchPlayers,
     fetch,
+    saveTransfers,
+    savePremierLeagueTransfers,
+    saveChampionshipTransfers,
+    saveLeagueOneTransfers,
+    saveLeagueTwoTransfers,
 } from '../fetch-spreadsheet';
 
 
@@ -40,6 +46,8 @@ export default () => {
     router.get('/premierLeagueTransfers', (ctx, next) => fetchPremierLeagueTransfers().then(responder(ctx, next)));
     router.get('/championshipTransfers', (ctx, next) => fetchChampionshipTransfers().then(responder(ctx, next)));
     router.get('/leagueOneTransfers', (ctx, next) => fetchLeagueOneTransfers().then(responder(ctx, next)));
+    router.get('/leagueTwoTransfers', (ctx, next) => fetchLeagueTwoTransfers().then(responder(ctx, next)));
+
     router.get('/cup', (ctx, next) => fetchCup().then(responder(ctx, next)));
     router.get('/draft/:sheet', (ctx, next) => {
         const { sheet } = ctx.params;
@@ -53,8 +61,30 @@ export default () => {
     router.get('/gameWeeks', (ctx, next) => fetchGameWeeks().then(responder(ctx, next)));
     router.get('/players', (ctx, next) => fetchPlayers().then(responder(ctx, next)));
 
+    // todo: test with postman to save transfer data
+    router.post('/premierLeagueTransfers', (ctx, next) => {
+        const { body } = ctx.request;
+        return savePremierLeagueTransfers(body).then(responder(ctx, next))
+    });
+    router.post('/championshipTransfers', (ctx, next) => {
+        const { body } = ctx.request;
+        return saveChampionshipTransfers(body).then(responder(ctx, next));
+    });
+    router.post('/leagueOneTransfers', (ctx, next) => {
+        const { body } = ctx.request;
+        return saveLeagueOneTransfers(body).then(responder(ctx, next));
+    });
+    router.post('/leagueTwoTransfers', (ctx, next) => {
+        const { body } = ctx.request;
+        return saveLeagueTwoTransfers(body).then(responder(ctx, next));
+    });
+
     // fall through to direct 1:1 proxy...
     router.get('/:spreadsheet/values/:endpoint', (ctx, next) => {
+        const { spreadsheet, endpoint } = ctx.params;
+        return fetch(spreadsheet, `/values/${endpoint}`).then(responder(ctx, next))
+    });
+    router.post('/:spreadsheet/values/:endpoint', (ctx, next) => {
         const { spreadsheet, endpoint } = ctx.params;
         return fetch(spreadsheet, `/values/${endpoint}`).then(responder(ctx, next))
     });

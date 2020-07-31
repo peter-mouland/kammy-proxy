@@ -14,27 +14,28 @@
     "start:prod": "NODE_ENV=production node compiled/server-entry.js"
   },
   "dependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "7.8.7",
-    "@babel/node": "7.8.7",
-    "@babel/plugin-external-helpers": "7.8.3",
-    "@babel/plugin-proposal-class-properties": "7.8.3",
-    "@babel/plugin-proposal-export-default-from": "7.8.3",
-    "@babel/plugin-proposal-export-namespace-from": "7.8.3",
-    "@babel/plugin-proposal-object-rest-spread": "7.8.3",
+    "@babel/cli": "7.10.5",
+    "@babel/core": "7.11.0",
+    "@babel/node": "7.10.5",
+    "@babel/plugin-external-helpers": "7.10.4",
+    "@babel/plugin-proposal-class-properties": "7.10.4",
+    "@babel/plugin-proposal-export-default-from": "7.10.4",
+    "@babel/plugin-proposal-export-namespace-from": "7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "7.11.0",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
-    "@babel/plugin-transform-arrow-functions": "7.8.3",
-    "@babel/plugin-transform-runtime": "7.8.3",
-    "@babel/plugin-transform-spread": "7.8.3",
-    "@babel/preset-env": "7.8.7",
-    "@babel/runtime": "7.8.7",
+    "@babel/plugin-transform-arrow-functions": "7.10.4",
+    "@babel/plugin-transform-runtime": "7.11.0",
+    "@babel/plugin-transform-spread": "7.11.0",
+    "@babel/preset-env": "7.11.0",
+    "@babel/runtime": "7.11.0",
     "@koa/cors": "2",
-    "babel-loader": "8.0.6",
+    "babel-loader": "8.1.0",
     "babel-plugin-add-module-exports": "1.0.2",
-    "babel-plugin-dynamic-import-node": "2.3.0",
-    "babel-plugin-jsx-control-statements": "4.0.0",
+    "babel-plugin-dynamic-import-node": "2.3.3",
+    "babel-plugin-jsx-control-statements": "4.1.0",
     "babel-plugin-macros": "2.8.0",
     "dotenv": "^8.2.0",
+    "google-spreadsheet": "3.0.11",
     "jsonwebtoken": "8.5.1",
     "koa": "2.11.0",
     "koa-bodyparser": "4.2.1",
@@ -48,6 +49,6 @@
     "node-fetch": "2.6.0"
   },
   "devDependencies": {
-    "nodemon": "2.0.2"
+    "nodemon": "2.0.4"
   }
 }
