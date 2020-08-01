@@ -1,10 +1,10 @@
 # kammy-proxy
 
- > a proxy to support kammy
+ > a simple NodeJs proxy to support Kammy
 
-Proxies to Sky Sports Data to enable fetching directly from the browser.
-
-Proxies to google-sheets to enable updating from the browser (uses [google-spreadsheet package](https://github.com/theoephraim/node-google-spreadsheet))
+Runs on [Heroku](https://dashboard.heroku.com/apps/kammy-proxy).
+ - Proxies to Sky Sports Data to enable fetching directly from the browser.
+ - Proxies to google-sheets to enable updating from the browser (uses [google-spreadsheet package](https://github.com/theoephraim/node-google-spreadsheet))
 
 ## env variables
 
