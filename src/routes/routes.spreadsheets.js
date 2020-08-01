@@ -21,7 +21,6 @@ import {
     saveLeagueTwoTransfers,
 } from '../fetch-spreadsheet';
 
-
 const responder = (ctx, next) => (data) => {
   ctx.type = 'json';
   ctx.status = 200;
@@ -61,22 +60,10 @@ export default () => {
     router.get('/gameWeeks', (ctx, next) => fetchGameWeeks().then(responder(ctx, next)));
     router.get('/players', (ctx, next) => fetchPlayers().then(responder(ctx, next)));
 
-    // todo: test with postman to save transfer data
-    router.post('/premierLeagueTransfers', (ctx, next) => {
+    router.post('/transfers/:division(premierLeague|championship|leagueOne|leagueTwo)', (ctx, next) => {
         const { body } = ctx.request;
-        return savePremierLeagueTransfers(body).then(responder(ctx, next))
-    });
-    router.post('/championshipTransfers', (ctx, next) => {
-        const { body } = ctx.request;
-        return saveChampionshipTransfers(body).then(responder(ctx, next));
-    });
-    router.post('/leagueOneTransfers', (ctx, next) => {
-        const { body } = ctx.request;
-        return saveLeagueOneTransfers(body).then(responder(ctx, next));
-    });
-    router.post('/leagueTwoTransfers', (ctx, next) => {
-        const { body } = ctx.request;
-        return saveLeagueTwoTransfers(body).then(responder(ctx, next));
+        const { division } = ctx.params;
+        return saveTransfers(division, body).then(responder(ctx, next))
     });
 
     // fall through to direct 1:1 proxy...

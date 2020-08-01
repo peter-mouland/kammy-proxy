@@ -2,6 +2,10 @@
 
  > a proxy to support kammy
 
+Proxies to Sky Sports Data to enable fetching directly from the browser.
+
+Proxies to google-sheets to enable updating from the browser (uses [google-spreadsheet package](https://github.com/theoephraim/node-google-spreadsheet))
+
 ## env variables
 
  - SPREADSHEET_ACCESS_KEY
@@ -44,7 +48,7 @@ _note your service account's email address (also available in the JSON key file)
  - spreadsheets/players
 
 ## Google Spreadsheet 'POST' Routes
- - spreadsheets/premierLeagueTransfers
- - spreadsheets/championshipTransfers
- - spreadsheets/leagueOneTransfers
- - spreadsheets/leagueTwoTransfers
+ - spreadsheets/transfers/premierLeague
+ - spreadsheets/transfers/championship
+ - spreadsheets/transfers/leagueOne
+ - spreadsheets/transfers/leagueTwo
