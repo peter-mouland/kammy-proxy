@@ -25,6 +25,7 @@ module.exports = {
     fetchLeagueOneTransfers: () => fetch(spreadsheets.TRANSFERS_ID, `/values/leagueOne`),
     fetchLeagueTwoTransfers: () => fetch(spreadsheets.TRANSFERS_ID, `/values/leagueTwo`),
     fetchCup: () => fetch(spreadsheets.TRANSFERS_ID, `/values/cup`),
+    fetchCupSubmissions: () => fetch(spreadsheets.TRANSFERS_ID, `/values/cupSubmissions`),
 
     fetchDraft: (worksheet) => fetch(spreadsheets.DRAFT_ID, `/values/${worksheet}`),
     fetchDivisions: () => fetch(spreadsheets.DRAFT_ID, `/values/Divisions`),
@@ -38,4 +39,5 @@ module.exports = {
     saveLeagueOneTransfers: (data = []) => saveRows(spreadsheets.TRANSFERS_ID, `leagueOne`, data),
     saveLeagueTwoTransfers: (data = []) => saveRows(spreadsheets.TRANSFERS_ID, `leagueTwo`, data),
     saveTransfers: (worksheet, data = []) => saveRows(spreadsheets.TRANSFERS_ID, worksheet, data),
+    saveCupTeam: (data = []) => saveRows(spreadsheets.TRANSFERS_ID, 'cupSubmissions', data),
 };

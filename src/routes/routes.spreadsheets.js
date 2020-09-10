@@ -14,11 +14,9 @@ import {
     fetchGameWeeks,
     fetchPlayers,
     fetch,
+    fetchCupSubmissions,
     saveTransfers,
-    savePremierLeagueTransfers,
-    saveChampionshipTransfers,
-    saveLeagueOneTransfers,
-    saveLeagueTwoTransfers,
+    saveCupTeam,
 } from '../fetch-spreadsheet';
 
 const responder = (ctx, next) => (data) => {
@@ -48,6 +46,7 @@ export default () => {
     router.get('/leagueTwoTransfers', (ctx, next) => fetchLeagueTwoTransfers().then(responder(ctx, next)));
 
     router.get('/cup', (ctx, next) => fetchCup().then(responder(ctx, next)));
+    router.get('/cup/submissions', (ctx, next) => fetchCupSubmissions().then(responder(ctx, next)));
     router.get('/draft/:sheet', (ctx, next) => {
         const { sheet } = ctx.params;
         fetchDraft(sheet).then(responder(ctx, next))
@@ -64,6 +63,11 @@ export default () => {
         const { body } = ctx.request;
         const { division } = ctx.params;
         return saveTransfers(division, body).then(responder(ctx, next))
+    });
+
+    router.post('/cup', (ctx, next) => {
+        const { body } = ctx.request;
+        return saveCupTeam(body).then(responder(ctx, next))
     });
 
     // fall through to direct 1:1 proxy...

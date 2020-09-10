@@ -60,7 +60,9 @@ async function Connect(id) {
             validate(rows[0]);
             const worksheet = getSheet(worksheetName);
             await worksheet.loadHeaderRow();
-            const rowsWithStamp = (worksheet.headerValues.find((value) => value === 'Timestamp')) ? rows.map((row) => ({...row, Timestamp: getDateGMTTime()})) : rows;
+            const rowsWithStamp = (worksheet.headerValues.find((value) => value.toLowerCase() === 'timestamp'))
+                ? rows.map((row) => ({...row, Timestamp: getDateGMTTime(), timestamp: getDateGMTTime(), }))
+                : rows;
             await worksheet.addRows(rowsWithStamp, { insert: true, raw: true });
             return rowsWithStamp;
         },
