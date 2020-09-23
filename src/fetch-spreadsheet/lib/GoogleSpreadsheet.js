@@ -35,7 +35,8 @@ function addHour({ ms = 0, sec = 0, min = 0, hrs = 1, days = 0}) {
 }
 
 function getDateGMTTime() {
-    return (isBST() ? addHour({}) : new Date()).toUTCString();
+    // todo: just use .getTimezoneOffset()?
+    return `${(isBST() ? addHour({}) : new Date()).toUTCString()}${isBST() ? '+0100' : ''}`;
 }
 
 async function Connect(id) {
