@@ -28,7 +28,7 @@ async function handler(req, res) {
     const { body, query } = req;
     const { division } = query;
     if (!body || !division) {
-        return res.status(500).json({ error: 'incomplete request',  body: body || 'missing', division: division || 'missing' });
+        return res.status(500).json({ error: 'incomplete request',  body: body || false, division: division || false });
     }
 
     const response = await addRows(division, body);

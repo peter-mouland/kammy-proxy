@@ -7,27 +7,11 @@
     "npm": ">=6.0.0",
     "yarn": ">=1.9.0"
   },
-  "scripts": {
-    "dev": "nodemode src/server-entry.mjs",
-    "start": "node src/server-entry.mjs"
-  },
   "dependencies": {
-    "@clearscore/sonar": "2.0.2",
-    "@koa/cors": "4.0.0",
     "@vercel/node": "2.8.2",
     "dotenv": "^16.0.3",
     "google-spreadsheet": "3.3.0",
-    "jsonwebtoken": "8.5.1",
-    "koa": "2.14.1",
-    "koa-bodyparser": "4.3.0",
-    "koa-compress": "5.1.0",
-    "koa-convert": "2.0.0",
-    "koa-passport": "5.0.0",
-    "koa-qs": "3.0.0",
-    "koa-router": "12.0.0",
-    "koa-session": "6.2.0",
-    "koa-static": "5.0.0",
-    "node-fetch": "3.3.0"
+    "jsonwebtoken": "8.5.1"
   },
   "devDependencies": {
     "nodemon": "2.0.4"

@@ -2,13 +2,12 @@
 
  > a simple NodeJs proxy to support Kammy
 
-Runs on [Heroku](https://dashboard.heroku.com/apps/kammy-proxy).
- - Proxies to Sky Sports Data to enable fetching directly from the browser.
+Runs on [Vercel](https://vercel.com/petermouland/kammy-proxy/deployments).
  - Proxies to google-sheets to enable updating from the browser (uses [google-spreadsheet package](https://github.com/theoephraim/node-google-spreadsheet))
 
 ## Local Dev
 
- - `yarn start`
+ - not sure to be honest
 
 ## env variables
 
@@ -29,32 +28,3 @@ Create a service account for your project
   - your JSON key file is generated and downloaded to your machine (it is the only copy!)
   - click "DONE"
 _note your service account's email address (also available in the JSON key file)_
-
-## API
-
-### Trigger a Gatsby Build
-
- - admin/publish
-
-### Sky Sports Routes
- - skysports/scores
- - skysports/fixtures
- - skysports/player_stats
- - skysports/players
- - skysports/player/:code
-
-### Google Spreadsheet 'GET' Routes
- - spreadsheets/premierLeagueTransfers
- - spreadsheets/championshipTransfers
- - spreadsheets/leagueOneTransfers
- - spreadsheets/leagueTwoTransfers
- - spreadsheets/cup
- - spreadsheets/divisions
- - spreadsheets/gameWeeks
- - spreadsheets/players
-
-### Google Spreadsheet 'POST' Routes
- - spreadsheets/transfers/premierLeague
- - spreadsheets/transfers/championship
- - spreadsheets/transfers/leagueOne
- - spreadsheets/transfers/leagueTwo
