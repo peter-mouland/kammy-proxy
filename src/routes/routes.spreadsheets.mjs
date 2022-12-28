@@ -1,6 +1,6 @@
 import Router from 'koa-router';
 
-import handleError from '../koa-middleware-handler-error';
+import handleError from '../koa-middleware-handler-error/index.mjs';
 import {
     fetchTransfers,
     fetchPremierLeagueTransfers,
@@ -17,7 +17,7 @@ import {
     fetchCupSubmissions,
     saveTransfers,
     saveCupTeam,
-} from '../fetch-spreadsheet';
+} from '../fetch-spreadsheet/index.mjs';
 
 const responder = (ctx, next) => (data) => {
   ctx.type = 'json';

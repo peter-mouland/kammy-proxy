@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+import cyprto from 'node:crypto';
 
 export default function index() {
   return async (ctx, next) => {

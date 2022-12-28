@@ -1,4 +1,4 @@
-const { GoogleSpreadsheet } = require('google-spreadsheet');
+import { GoogleSpreadsheet } from 'google-spreadsheet';
 
 function validate(row) {
     Object.keys(row).forEach((key) => {
@@ -39,7 +39,7 @@ function getDateGMTTime() {
     return `${(isBST() ? addHour({}) : new Date()).toUTCString()}${isBST() ? '+0100' : ''}`;
 }
 
-async function Connect(id) {
+export async function Connect(id) {
     const doc = new GoogleSpreadsheet(id);
     const creds = {
         client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
@@ -76,5 +76,3 @@ async function Connect(id) {
         },
     };
 }
-
-module.exports = Connect;

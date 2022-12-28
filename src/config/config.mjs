@@ -1,4 +1,6 @@
-require('dotenv').config({
+import { config as dotEnv } from "dotenv";
+
+dotEnv({
     path: '.env',
     debug: process.env.DEBUG,
 });
@@ -42,4 +44,4 @@ if (Object.keys(config).length === 0) {
     setConfig();
 }
 
-module.exports = config;
+export default config;

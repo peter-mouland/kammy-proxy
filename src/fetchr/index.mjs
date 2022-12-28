@@ -1,4 +1,4 @@
-import { getLocalUrl } from './localUrl';
+import { getLocalUrl } from './localUrl.mjs';
 
 function queryParams(params) {
   return Object.keys(params)

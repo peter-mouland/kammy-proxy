@@ -1,5 +1,5 @@
-import './polyfills';
-import './config/config';
+import './polyfills/index.mjs';
+import './config/config.mjs';
 
 import Koa from 'koa';
 import compress from 'koa-compress';
@@ -11,13 +11,13 @@ import koaStatic from 'koa-static';
 import bodyParser from 'koa-bodyparser';
 import cors from '@koa/cors';
 
-import headers from './koa-middleware-headers';
+import headers from './koa-middleware-headers/index.mjs';
 
-import skySportsRouter from './routes/routes.skysports';
-import fplRouter from './routes/routes.fpl';
-import spreadsheetsRouter from './routes/routes.spreadsheets';
-import { DIST } from './config/paths';
-import { postJSON } from "./fetchr";
+import skySportsRouter from './routes/routes.skysports.mjs';
+import fplRouter from './routes/routes.fpl.mjs';
+import spreadsheetsRouter from './routes/routes.spreadsheets.mjs';
+import { DIST } from './config/paths.mjs';
+import { postJSON } from "./fetchr/index.mjs";
 
 const YEAR = 100 * 60 * 60 * 24 * 7 * 52;
 const server = new Koa();

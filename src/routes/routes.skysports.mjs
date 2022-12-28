@@ -1,7 +1,7 @@
 import Router from 'koa-router';
 
-import handleError from '../koa-middleware-handler-error';
-import { getJSON } from '../fetchr';
+import handleError from '../koa-middleware-handler-error/index.mjs';
+import { getJSON } from '../fetchr/index.mjs';
 
 const responder = (ctx, next) => (data) => {
   ctx.type = 'json';
