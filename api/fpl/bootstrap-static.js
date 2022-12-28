@@ -29,4 +29,4 @@ async function handler(req, res) {
     }
 }
 
-export default allowCors(handler())
+export default allowCors(handler)

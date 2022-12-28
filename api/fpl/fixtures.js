@@ -25,4 +25,4 @@ async function handler(req, res) {
     return res.status(200).json( data);
 }
 
-export default allowCors(handler())
+export default allowCors(handler)
