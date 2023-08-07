@@ -20,3 +20,5 @@ aws
 /junit.xml
 /.env.development
 /keys
+
+.yarn/cache
