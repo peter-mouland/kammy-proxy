@@ -20,7 +20,6 @@ const allowCors = (fn) => async (req, res) => {
 const spreadsheets = {
     SETUP_ID: '19uzl1nYi6ZFsFhim4-wm-ztVWazYAshKU0eca7FSwHw', // game-weeks, players, teams + draft picks
     TRANSFERS_ID: '1sU3xKfpOD6m3hdYqddfMXpVmvkJu4_LdUnJd1YLzU9U', // transfers
-    DRAFT_ID: '1UKOeKiApAoNMXj8id3wfaTq9HrO2zHz5_yO2TqCah7c', // teams + draft picks
 };
 
 async function handler(req, res) {
