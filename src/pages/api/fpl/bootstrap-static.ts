@@ -1,5 +1,11 @@
-const allowCors = (fn) => async (req, res) => {
-    res.setHeader('Access-Control-Allow-Credentials', true)
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+type ResponseData = {
+    message: string
+}
+
+const allowCors = (fn: any) => async (req: NextApiRequest, res:  NextApiResponse<ResponseData>) => {
+    res.setHeader('Access-Control-Allow-Credentials', 'true')
     res.setHeader('Access-Control-Allow-Origin', '*')
     // another common pattern
     // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
@@ -15,7 +21,7 @@ const allowCors = (fn) => async (req, res) => {
     return await fn(req, res)
 }
 
-async function handler(req, res) {
+async function handler (req: NextApiRequest, res:  NextApiResponse<ResponseData>) {
     try {
         const bootstrap = await fetch('https://fantasy.premierleague.com/api/bootstrap-static/', {
             method: 'GET',

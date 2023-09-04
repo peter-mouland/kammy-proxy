@@ -1,30 +1,34 @@
-# kammy-proxy
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
- > a simple NodeJs proxy to support Kammy
+## Getting Started
 
-Runs on [Vercel](https://vercel.com/petermouland/kammy-proxy/deployments).
- - Proxies to google-sheets to enable updating from the browser (uses [google-spreadsheet package](https://github.com/theoephraim/node-google-spreadsheet))
+First, run the development server:
 
-## Local Dev
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
- - not sure to be honest
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## env variables
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
- - SPREADSHEET_ACCESS_KEY
- - GOOGLE_SERVICE_ACCOUNT_EMAIL
- - GOOGLE_PRIVATE_KEY
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-### Google Keys: Setup Instructions
+## Learn More
 
-Create a service account for your project
-  - In the sidebar on the left, select APIs & Services > Credentials
-  - Click blue "+ CREATE CREDENITALS" and select "Service account" option
-  - Enter name, description, click "CREATE"
-  - You can skip permissions, click "CONTINUE"
-  - Click "+ CREATE KEY" button
-  - Select the "JSON" key type option
-  - Click "Create" button
-  - your JSON key file is generated and downloaded to your machine (it is the only copy!)
-  - click "DONE"
-_note your service account's email address (also available in the JSON key file)_
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
