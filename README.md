@@ -4,6 +4,7 @@
 
 Runs on [Vercel](https://vercel.com/petermouland/kammy-proxy/deployments).
  - Proxies to google-sheets to enable updating from the browser (uses [google-spreadsheet package](https://github.com/theoephraim/node-google-spreadsheet))
+ - Deployed to https://kammy-proxy.vercel.app/api/fpl
 
 ## Local Dev
 
