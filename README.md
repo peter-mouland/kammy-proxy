@@ -8,7 +8,7 @@ Runs on [Vercel](https://vercel.com/petermouland/kammy-proxy/deployments).
 
 ## Local Dev
 
- - not sure to be honest
+ - not sure to be honest, `vercel dev`?
 
 ## env variables
 
