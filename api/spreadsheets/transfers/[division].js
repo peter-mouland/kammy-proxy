@@ -18,8 +18,8 @@ const allowCors = (fn) => async (req, res) => {
 }
 
 const spreadsheets = {
-    SETUP_ID: '19uzl1nYi6ZFsFhim4-wm-ztVWazYAshKU0eca7FSwHw', // game-weeks, players, teams + draft picks
-    TRANSFERS_ID: '1sU3xKfpOD6m3hdYqddfMXpVmvkJu4_LdUnJd1YLzU9U', // transfers
+    SETUP_ID: '14UJbIM10PAIvL_9pH1vkC8sIzwWRbIqUbBNEoZTVYuQ', // game-weeks, players, teams + draft picks
+    TRANSFERS_ID: '1zbSCg1yCyRkAw6jsQEXlpeK1bk1VpNbl5gR4_D1dX5Y', // transfers
 };
 
 async function handler(req, res) {
