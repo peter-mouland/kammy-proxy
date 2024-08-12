@@ -9,7 +9,8 @@
   "dependencies": {
     "@vercel/node": "3.2.8",
     "dotenv": "16.4.5",
-    "google-spreadsheet": "3.3.0",
+    "google-auth-library": "9.13.0",
+    "google-spreadsheet": "4.1.2",
     "jsonwebtoken": "9.0.2",
     "vercel": "35.2.4"
   },
